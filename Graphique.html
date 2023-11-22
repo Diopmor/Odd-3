@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graphique sur le Paludisme</title>
+    <!-- Inclure la bibliothèque Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <h1>Graphique sur le Paludisme</h1>
+
+    <!-- Ajouter un élément canvas pour le graphique -->
+    <canvas id="myChart" width="400" height="200"></canvas>
+
+    <script>
+        // Récupérer le contexte du graphique
+        var ctx = document.getElementById('myChart').getContext('2d');
+
+        // Données du graphique (hypothétiques)
+        var data = {
+            labels: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai'],
+            datasets: [{
+                label: 'Cas de Paludisme',
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 1,
+                data: [10, 15, 8, 12, 18],
+            }]
+        };
+
+        // Options du graphique
+        var options = {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        };
+
+        // Créer le graphique
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: data,
+            options: options
+        });
+    </script>
+
+</body>
+</html>
